@@ -1,3 +1,5 @@
+require 'calculator'
+
 class CalculatorsController < ApplicationController
   def new
     @results = calculate
@@ -8,7 +10,7 @@ class CalculatorsController < ApplicationController
   def calculate
     if params[:input].present?
       Results.new(params[:input],
-                  params[:input])
+                  Calculator.calculate(params[:input]))
     end
   end
 end
