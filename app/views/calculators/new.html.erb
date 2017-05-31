@@ -1,0 +1,7 @@
+<%= form_tag(root_path, method: :get, class: 'form-calculator') do -%>
+  <h2 class="form-calculator-heading">Enter an arithmetic expression</h2>
+  <%= label_tag 'input', nil, class: 'sr-only' %>
+  <%= text_field_tag 'input', params[:input], class: 'form-control' %>
+  <%= render 'results' %>
+  <%= submit_tag 'Calculate', class: 'btn btn-lg btn-primary btn-block' %>
+<% end -%>
